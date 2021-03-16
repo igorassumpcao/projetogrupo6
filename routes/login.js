@@ -15,7 +15,7 @@ router.post("/", function(req, res){
       invalidCredentials: true
     });
   }
-  res.redirect("/");
+  res.redirect("products");
   //*res.send('olá')
 })
 

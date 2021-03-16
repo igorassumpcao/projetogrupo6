@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
+var controllers = require("../controllers/index")
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Pet Shop do Grupo 06" });
-});
+router.get("/", controllers.get);
+
+router.post("/", controllers.post);
 
 module.exports = router;
