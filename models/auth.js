@@ -4,7 +4,7 @@ const users = [
         password: "123"
     },
     {
-        login: "yamille@petshop.com.br",
+        login: "yamile@petshop.com.br",
         password: "123"
     },
     {

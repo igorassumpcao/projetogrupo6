@@ -10,3 +10,23 @@ body{
     background-color: #fff;
 
 }
+
+.type-radio {
+    display: inline-flex
+    
+}
+
+.products-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    
+}
+
+.cadastro{
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
