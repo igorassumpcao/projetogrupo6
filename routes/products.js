@@ -39,7 +39,6 @@ router.post("/", function(req, res, next){
 });
 
 router.delete('/:id', function(req, res) {
-    console.log("chamando delete")
     products = products.filter(function(product) {
         return product.id !== parseInt(req.params.id);
     })

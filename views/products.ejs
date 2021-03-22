@@ -16,7 +16,7 @@
         <% products.forEach(function(product){ %>
           <div>
             <%- product.name %>
-              <form action="<%= product.id %>?_method=DELETE" method="POST">  <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
+              <form action="/products/<%= product.id %>?_method=DELETE" method="POST">  <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
                 <input type="submit" value="Excluir" />
               </form>
           </div>

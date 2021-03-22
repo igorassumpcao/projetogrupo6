@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -22,6 +23,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    secret: 'myApp', // Uma chave segura, podendendo ser qualquer string, para uma maior segurança procure algo como um UUID;
+    resave: true, // Opção que diz para o servidor, que a sessão deve ser renovada a cada acesso;
+    saveUninitialized: true, // Força uma sessão que não está inicializada para que seja salva na store;
+  })
+);
 
 app.use(methodOverride('_method'));
 app.use('/', indexRouter);
@@ -45,5 +53,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

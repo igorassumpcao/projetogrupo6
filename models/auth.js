@@ -10,6 +10,10 @@ const users = [
     {
         login: "carlos@petshop.com.br",
         password: "123"
+    },
+    {
+        login: "igor@petshop.com.br",
+        password: "123"
     }
 ];
 
