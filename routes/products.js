@@ -1,6 +1,7 @@
 var express = require("express");
 const { route } = require(".");
 var router = express.Router();
+var middleware = require("../middlewares/login")
 
 var products = [{
     id: 1,
@@ -31,7 +32,7 @@ router.get("/", function(req, res){
     res.render("products", {types:types, products:products});
 });
 
-router.post("/", function(req, res, next){
+router.post("/", middleware.auth, function(req, res, next){
     const newProduct = req.body;
     newProduct.id = parseInt(Math.random()*1000000);
     products.push(newProduct);
