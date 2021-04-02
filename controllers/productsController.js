@@ -1,5 +1,3 @@
-const middleware = require("../middlewares/login");
-
 const productsController = {
   products: [
     {
@@ -38,33 +36,28 @@ const productsController = {
     });
   },
 
-  post:
-    (middleware.auth,
-    (req, res, next) => {
-      const newProduct = req.body;
-      newProduct.id = parseInt(Math.random() * 1000000);
-      productsController.products.push(newProduct);
-      res.render("products", {
-        types: productsController.types,
-        products: productsController.products,
-      });
-    }),
+  post: (req, res, next) => {
+    const newProduct = req.body;
+    newProduct.id = parseInt(Math.random() * 1000000);
+    productsController.products.push(newProduct);
+    res.render("products", {
+      types: productsController.types,
+      products: productsController.products,
+    });
+  },
 
-  delete:
-    ("/:id",
-    middleware.auth,
-    function (req, res) {
-      productsController.products = productsController.products.filter(
-        function (product) {
-          return product.id !== parseInt(req.params.id);
-        }
-      );
+  delete: (req, res) => {
+    productsController.products = productsController.products.filter(function (
+      product
+    ) {
+      return product.id !== parseInt(req.params.id);
+    });
 
-      res.render("products", {
-        types: productsController.types,
-        products: productsController.products,
-      });
-    }),
+    res.render("products", {
+      types: productsController.types,
+      products: productsController.products,
+    });
+  },
 };
 
 module.exports = productsController;
