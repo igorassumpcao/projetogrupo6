@@ -1,25 +1,9 @@
-var express = require("express");
-var router = express.Router();
-var model = require("../models/auth");
+const express = require("express");
+const router = express.Router();
+const loginController = require("../controllers/loginController");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("login");
-});
-
-router.post("/", function(req, res){
-  const credentials = req.body
-  const user = model.authenticateUser(credentials.login, credentials.password);
-  if(user === undefined){
-    res.render("login", {
-      invalidCredentials: true
-    });
-  }
-
-  req.session.user = user;
-  res.redirect("products");
-  //*res.send('olá')
-})
-
+router.get("/", loginController.get);
+router.post("/", loginController.post);
 
 module.exports = router;

@@ -1,59 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, inicial-scale=1"> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, inicial-scale=1" />
     <title>PetShop</title>
-    <link rel='stylesheet' href='../stylesheets/products.css' />
+    <link rel="stylesheet" href="../stylesheets/products.css" />
   </head>
   <body>
     <%- include('./partials/header')%>
-    <br>
-    <br>
+    <br />
+    <br />
     <h1>Produtos</h1>
     <main>
       <div class="products-list">
         <% products.forEach(function(product){ %>
-          <div>
-            <%- product.name %>
-              <form action="/products/<%= product.id %>?_method=DELETE" method="POST">  <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
-                <input type="submit" value="Excluir" />
-              </form>
-          </div>
+        <div>
+          <%- product.name %>
+          <form
+            action="/products/<%= product.id %>?_method=DELETE"
+            method="POST"
+          >
+            <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
+            <input type="submit" value="Excluir" />
+          </form>
+        </div>
         <% }) %>
       </div>
-      <div class="cadastro">  
+      <div class="cadastro">
         <form action="" method="POST">
           <div>
             <label for="name">Nome do produto:</label>
-            <input name="name" id="name" type="text" placeholder="Campo obrigatório" required/>
+            <input
+              name="name"
+              id="name"
+              type="text"
+              placeholder="Campo obrigatório"
+              required
+            />
           </div>
           <div>
             <label for="price">Preço do produto:</label>
-            <input name="price" id="price" type="number" required placeholder="Campo obrigatório"/>
+            <input
+              name="price"
+              id="price"
+              type="number"
+              required
+              placeholder="Campo obrigatório"
+            />
           </div>
           <div>
             <div>
               <label>Tipo de produto:</label>
             </div>
-        
+
             <% types.forEach(function(type) {%>
             <div class="type-radio">
-              <input type="radio" name="type" id="<%= type.id %>" value="<%= type.id %>"/>
+              <input
+                type="radio"
+                name="type"
+                id="<%= type.id %>"
+                value="<%= type.id %>"
+              />
               <label for="<%= type.id %>"> <%= type.label %> </label>
             </div>
             <%}) %>
           </div>
           <div>
-            <input type="submit" value="Cadastrar produto" class="btn btn-primary"/>
-            <input type="reset" value="Cancelar" class="btn btn-danger"/>
+            <input
+              type="submit"
+              value="Cadastrar produto"
+              class="btn btn-primary"
+            />
+            <input type="reset" value="Cancelar" class="btn btn-danger" />
           </div>
         </form>
-      </div>  
+      </div>
     </main>
-    <footer>
-
-    </footer>
-    
+    <footer></footer>
   </body>
 </html>

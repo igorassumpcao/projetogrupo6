@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel='stylesheet' href='/stylesheets/header.css' />
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="range_item">
+      <div class="range_item">
         <p class="text">Compre online com 10% OFF. O mais Rápido do Mundo</p>
-        </div>
-        <div class="range_item">
+      </div>
+      <div class="range_item">
         <form action="">
-            <a class="links_menu" href="/">Início</a>
-            <a class="links_menu" href="/products">Produtos</a>
-            <a class="links_menu" href="/login">Login</a>
-            <input type="submit" name="btnatendimento" value="Atendimento" class="btnatendimento">
+          <a class="links_menu" href="/">Início</a>
+          <a class="links_menu" href="/products">Produtos</a>
+          <input
+            type="submit"
+            name="btnatendimento"
+            value="Atendimento"
+            class="btnatendimento"
+          />
         </form>
-        </div>
+        <form method="GET" action="/logout">
+          <button type="submit" id="btn-logout">Logout</button>
+        </form>
+      </div>
     </div>
     <header>
-        <div class="headerContainer">
+      <div class="headerContainer">
         <div class="header_img">
-            <img class="imgLogo" src="https://image.freepik.com/vetores-gratis/logotipo-de-petshop-para-gatos-e-caes_9645-750.jpg">
+          <img
+            class="imgLogo"
+            src="https://image.freepik.com/vetores-gratis/logotipo-de-petshop-para-gatos-e-caes_9645-750.jpg"
+          />
         </div>
         <div class="busca">
-            <input type="text" id="txtBusca" placeholder="Buscar...">
-            <button class="btnBusca">Buscar</button>
+          <input type="text" id="txtBusca" placeholder="Buscar..." />
+          <button class="btnBusca">Buscar</button>
         </div>
         <div class="call-box">
-            <img id="imgEntrar" src="https://image.flaticon.com/icons/png/512/891/891389.png" alt="">
-            <form action="" method="POST">
-            <input type="submit" name="btn" value="Bem Vindo">
-            </form>
+          <img
+            id="imgEntrar"
+            src="https://image.flaticon.com/icons/png/512/891/891389.png"
+            alt=""
+          />
+
+          <a class="links_menu" href="/login"
+            ><button id="btnBemVindo">Bem vindo</button></a
+          >
         </div>
-        </div>
+      </div>
     </header>
-</body>
+  </body>
 </html>
