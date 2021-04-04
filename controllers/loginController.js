@@ -2,7 +2,8 @@ const model = require("../models/auth");
 
 const loginController = {
   get: (req, res) => {
-    res.render("login");
+    const message = req.query.errorMessage;
+    res.render("login", { message: message });
   },
 
   post: (req, res) => {
