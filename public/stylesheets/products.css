@@ -20,17 +20,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
+  width: auto;
+  height: auto;
 }
 
 .cadastro {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-top: 50px;
 }
 
 .tela-cadastro {
-  display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -44,4 +46,31 @@ body {
 #price {
   margin-left: 3px;
   margin-top: 10px;
+}
+
+#descricao {
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+#produto-nome {
+  align-self: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.card {
+  flex: 0 0 150px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.card img {
+  max-width: 100%;
+}
+.card .text {
+  padding: 0 20px 20px;
 }

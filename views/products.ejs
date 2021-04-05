@@ -13,6 +13,26 @@
     <h1 id="h1-produto">Produtos</h1>
     <main>
       <div class="tela-cadastro">
+        <div class="products-list" class="cards">
+          <% products.forEach(function(product){ %>
+          <div class="card">
+            <strong id="produto-nome"><%- product.name %></strong>
+            <p>Preço: R$ <%- product.price %> <br>
+              Tipo: <%- product.type %></p>
+              <%- product.descricao %>
+              <br />
+            </p>
+
+            <form
+              action="/products/<%= product.id %>?_method=DELETE"
+              method="POST"
+            >
+              <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
+              <input id="btn-excluir-cadastro" type="submit" value="Excluir" />
+            </form>
+          </div>
+          <% }) %>
+        </div>
         <div class="cadastro">
           <form action="" method="POST">
             <div>
@@ -31,6 +51,16 @@
                 name="price"
                 id="price"
                 type="number"
+                required
+                placeholder="Campo obrigatório"
+              />
+            </div>
+            <div>
+              <label for="descricao">Descrição: </label>
+              <input
+                name="descricao"
+                id="descricao"
+                type="text"
                 required
                 placeholder="Campo obrigatório"
               />
@@ -61,20 +91,6 @@
               <input type="reset" value="Cancelar" class="btn btn-danger" />
             </div>
           </form>
-        </div>
-        <div class="products-list">
-          <% products.forEach(function(product){ %>
-          <div>
-            <%- product.name %>
-            <form
-              action="/products/<%= product.id %>?_method=DELETE"
-              method="POST"
-            >
-              <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
-              <input type="submit" value="Excluir" />
-            </form>
-          </div>
-          <% }) %>
         </div>
       </div>
     </main>

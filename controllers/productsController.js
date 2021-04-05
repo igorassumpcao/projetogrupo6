@@ -4,19 +4,21 @@ const productsController = {
       id: 1,
       name: "Ração Premium",
       price: 100,
-      type: "alimentacao",
+      type: "alimentação",
+      descricao: "descricao",
     },
     {
       id: 2,
       name: "Bola",
       price: 4,
       type: "brinquedos",
+      descricao: "descricao",
     },
   ],
 
   types: [
     {
-      id: "alimentacao",
+      id: "alimentação",
       label: "Alimentação",
     },
     {
