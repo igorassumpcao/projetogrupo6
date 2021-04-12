@@ -23,13 +23,25 @@
               <br />
             </p>
 
-            <form
+            <div class="row">
+              <div >
+                <a
+                  role="button"
+                  href="/products/edit/<%-product.id%>"
+                  class="btn btn-warning"
+                >
+                  Editar
+                </a>
+              </div>
+              <form
               action="/products/<%= product.id %>?_method=DELETE"
               method="POST"
-            >
+              >
               <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
               <input id="btn-excluir-cadastro" type="submit" value="Excluir" />
-            </form>
+              </form>
+            </div>
+            
           </div>
           <% }) %>
         </div>

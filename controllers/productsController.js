@@ -37,6 +37,20 @@ const productsController = {
       products: productsController.products,
     });
   },
+  getById: (productId) => {
+    const index = productsController.products.findIndex((obj) => {
+      return parseInt(obj.id) === parseInt(productId);
+    });
+  
+    return productsController.products[index];
+  }
+  ,
+  edit: (req, res) => {
+    const productId = req.params.id;
+    const product = productsController.getById(productId);
+    const types = productsController.types;
+    res.render("products/edit", { product: product, types: types });
+  },
 
   post: (req, res, next) => {
     const newProduct = req.body;
@@ -60,6 +74,23 @@ const productsController = {
       products: productsController.products,
     });
   },
+
+  updateProduct: (product) => {
+    const index = productsController.products.findIndex((obj) => {
+      return parseInt(obj.id) === parseInt(product.id);
+    });
+  
+    productsController.products[index] = product;
+  
+    return productsController.products[index];
+  },
+
+  put: (req, res) => {
+    const product = req.body;
+    productsController.updateProduct(product);
+    res.redirect("/products");
+  },
+
 };
 
 module.exports = productsController;
