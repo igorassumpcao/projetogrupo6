@@ -75,19 +75,14 @@ const productsController = {
     });
   },
 
-  updateProduct: (product) => {
-    const index = productsController.products.findIndex((obj) => {
-      return parseInt(obj.id) === parseInt(product.id);
-    });
-  
-    productsController.products[index] = product;
-  
-    return productsController.products[index];
-  },
-
   put: (req, res) => {
+    const id = req.params.id;
     const product = req.body;
-    productsController.updateProduct(product);
+    const index = productsController.products.findIndex((obj) => {
+      return parseInt(obj.id) === parseInt(id);
+    });
+    
+    productsController.products[index] = product;
     res.redirect("/products");
   },
 

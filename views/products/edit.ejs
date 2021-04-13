@@ -10,7 +10,7 @@
     <main class="container">
         <div class="tela-cadastro">
             <div class="cadastro">
-              <form action="/products?_method=put" method="POST">
+              <form action="/products/<%= product.id %>?_method=PUT" method="POST">
                 <div>
                   <label for="name">Nome do produto:</label>
                   <input
@@ -46,14 +46,19 @@
                     <label>Tipo de produto:</label>
                   </div>
     
-              <% types.forEach(function(types) {%>
+
+              <% 
+              types.forEach(function(types) {
+                let checked = ""  
+                if(product.type === types.id){checked = "checked"}%>
                   
                   <div class="type-radio">
                     <input
                       type="radio"
-                      name="<%= types.id %>"
+                      name="type"
                       id="<%= types.id %>"
                       value="<%= types.id %>"
+                    <%= checked %>
                     />
                     <label for="<%= types.id %>"> <%= types.id %> </label>
                   </div>
