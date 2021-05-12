@@ -8,7 +8,45 @@
   </head>
   <body>
     <%- include('./partials/header')%>
-    <main></main>
+    <main>
+      <div class="tela-inicial">
+        <div class="cards">
+          <% types.forEach(function(type){ %>
+          <div class="card">
+            <strong id="produto-tipo"><%- type.label %></strong>
+            <div>
+              <img src="https://image.freepik.com/vetores-gratis/logotipo-de-petshop-para-gatos-e-caes_9645-750.jpg" alt="Figura" class="imgLogo">
+            </div>
+            <div class="">
+              <div >
+                <a
+                  role="button"
+                  href="/products/types/<%-type.id%>"
+                  class="btn btn-warning"
+                >
+                  Ver mais
+                </a>
+              </div>              
+            </div>
+            
+          </div>
+          <% }) %>
+        </div>
+        <div class="cards2">
+          <% types.forEach(function(type){ %>
+          <div class="card2">
+            <div>
+              <img src="https://image.freepik.com/vetores-gratis/logotipo-de-petshop-para-gatos-e-caes_9645-750.jpg" alt="Figura" class="imgLogo">
+            </div>
+            <div>
+              <strong id="produto-tipo"><%- type.label %></strong>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse veniam, laudantium expedita rerum harum fugit id fugiat assumenda? Obcaecati iste ab blanditiis facilis, necessitatibus reiciendis excepturi dignissimos expedita perferendis laborum.</p>  
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </main>
     <footer></footer>
     <!-- Bootstrap and Javascript -->
     <link

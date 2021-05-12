@@ -1,6 +1,11 @@
+const productsController = require("../controllers/productsController");
+
+
 const indexController = {
   get: (req, res) => {
-    res.render("index");
+    res.render("index", {
+      types: productsController.types,
+    });
   },
 
   post: (req, res) => {

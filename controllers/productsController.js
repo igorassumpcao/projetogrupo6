@@ -43,15 +43,15 @@ const productsController = {
     });
   
     return productsController.products[index];
-  }
-  ,
+  },
+  
   edit: (req, res) => {
     const productId = req.params.id;
     const product = productsController.getById(productId);
     const types = productsController.types;
     res.render("products/edit", { product: product, types: types });
   },
-
+  
   post: (req, res, next) => {
     const newProduct = req.body;
     newProduct.id = parseInt(Math.random() * 1000000);
