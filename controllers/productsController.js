@@ -1,3 +1,8 @@
+const Sequelize = require("sequelize");
+const config = require("../config/database");
+const db = new Sequelize(config);
+const productsModel = require("../models/products");
+
 const productsController = {
   products: [
     {
@@ -31,61 +36,40 @@ const productsController = {
     },
   ],
 
-  get: (req, res) => {
-    res.render("products", {
-      types: productsController.types,
-      products: productsController.products,
-    });
+
+  get: async (req, res) => {
+    const productsData = await productsModel.getProducts();
+    const types = productsController.types;
+    res.render("products", { products: productsData, types: types  });
   },
-  getById: (productId) => {
-    const index = productsController.products.findIndex((obj) => {
-      return parseInt(obj.id) === parseInt(productId);
-    });
-  
-    return productsController.products[index];
-  },
-  
-  edit: (req, res) => {
+
+
+ edit: async (req, res) => {
     const productId = req.params.id;
-    const product = productsController.getById(productId);
+    const product = await productsModel.getProductById(productId);
     const types = productsController.types;
     res.render("products/edit", { product: product, types: types });
   },
   
-  post: (req, res, next) => {
-    const newProduct = req.body;
-    newProduct.id = parseInt(Math.random() * 1000000);
-    productsController.products.push(newProduct);
-    res.render("products", {
-      types: productsController.types,
-      products: productsController.products,
-    });
-  },
-
-  delete: (req, res) => {
-    productsController.products = productsController.products.filter(function (
-      product
-    ) {
-      return product.id !== parseInt(req.params.id);
-    });
-
-    res.render("products", {
-      types: productsController.types,
-      products: productsController.products,
-    });
-  },
-
-  put: (req, res) => {
-    const id = req.params.id;
+  post: async (req, res, next) => {
     const product = req.body;
-    const index = productsController.products.findIndex((obj) => {
-      return parseInt(obj.id) === parseInt(id);
-    });
-    
-    productsController.products[index] = product;
+    await productsModel.insertProduct(product);
     res.redirect("/products");
   },
 
-};
+
+  delete: async (req, res) => {
+    const productId = req.params.id;
+    await productsModel.removeProduct(productId);
+    res.redirect("/products");
+  },
+
+  put: async (req, res) => {
+    const product = req.body;
+    await productsModel.updateProduct(product);
+    res.redirect("/products");
+}
+}
+
 
 module.exports = productsController;

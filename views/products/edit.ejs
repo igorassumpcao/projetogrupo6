@@ -12,6 +12,16 @@
             <div class="cadastro">
               <form action="/products/<%= product.id %>?_method=PUT" method="POST">
                 <div>
+                  <label for="id">Código do produto:</label>
+                  <input
+                    name="id"
+                    id="id"
+                    type="text"
+                    value="<%- product.id%>"
+                    required
+                  />
+                </div>
+                <div>
                   <label for="name">Nome do produto:</label>
                   <input
                     name="name"
@@ -32,13 +42,13 @@
                   />
                 </div>
                 <div>
-                  <label for="descricao">Descrição: </label>
+                  <label for="description">Descrição: </label>
                   <input
-                    name="descricao"
-                    id="descricao"
+                    name="description"
+                    id="description"
                     type="text"
                     required
-                    value="<%- product.descricao %>"
+                    value="<%- product.description %>"
                   />
                 </div>
                 <div>

@@ -19,7 +19,7 @@
             <strong id="produto-nome"><%- product.name %></strong>
             <p>Preço: R$ <%- product.price %> <br>
               Tipo: <%- product.type %></p>
-              <%- product.descricao %>
+              <%- product.description %>
               <br />
             </p>
 
@@ -68,10 +68,10 @@
               />
             </div>
             <div>
-              <label for="descricao">Descrição: </label>
+              <label for="description">Descrição: </label>
               <input
-                name="descricao"
-                id="descricao"
+                name="description"
+                id="description"
                 type="text"
                 required
                 placeholder="Campo obrigatório"
@@ -83,17 +83,17 @@
               </div>
 
               <% types.forEach(function(type) {%>
-              <div class="type-radio">
-                <input
-                  type="radio"
-                  name="type"
-                  id="<%= type.id %>"
-                  value="<%= type.id %>"
-                />
-                <label for="<%= type.id %>"> <%= type.label %> </label>
+                <div class="type-radio">
+                  <input
+                    type="radio"
+                    name="type"
+                    id="<%= type.id %>"
+                    value="<%= type.id %>"
+                  />
+                  <label for="<%= type.id %>"> <%= type.label %> </label>
+                </div>
+                <%}) %>
               </div>
-              <%}) %>
-            </div>
             <div>
               <input
                 type="submit"
