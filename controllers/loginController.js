@@ -16,10 +16,9 @@ const loginController = {
       res.redirect("products");
     } else{
       
-      function funcao1()
-      {
-      alert("Eu sou um alert!");
-      }
+      res.render("login", {
+        invalidCredentials: true,
+      });
     }
     
   }
