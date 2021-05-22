@@ -1,3 +1,4 @@
+const { authenticateUser } = require("../models/auth");
 const model = require("../models/auth");
 
 const loginController = {
@@ -6,6 +7,25 @@ const loginController = {
     res.render("login", { message: message });
   },
 
+  post: async (req, res) =>{
+    const user = await model.authenticateUser(req.body)
+    console.log('user encontrado ', user);
+
+    if(user !== undefined && user.password === req.body.password){
+      req.session.user = user;
+      res.redirect("products");
+    } else{
+      
+      function funcao1()
+      {
+      alert("Eu sou um alert!");
+      }
+    }
+    
+  }
+};
+
+  /*
   post: (req, res) => {
     const credentials = req.body;
     const user = model.authenticateUser(
@@ -21,6 +41,6 @@ const loginController = {
       res.redirect("products");
     }
   },
-};
+};*/
 
 module.exports = loginController;

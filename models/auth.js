@@ -1,3 +1,7 @@
+const Sequelize = require("sequelize");
+const config = require("../config/database");
+const db = new Sequelize(config);
+
 const users = [
     {
         login: "fabio@petshop.com.br",
@@ -17,13 +21,27 @@ const users = [
     }
 ];
 
-function authenticateUser(login, password) {
+/* function authenticateUser(login, password) {
     const user = users.find(function (user) {
       return user.login === login && user.password === password;
     });
   
     return user;
-  }
+  }*/
+
+async function authenticateUser(credentials){
+    const response = await db.query("SELECT * FROM login where email = :email", {
+        type: Sequelize.QueryTypes.SELECT, 
+        replacements:{
+            email: credentials.email
+        }
+    })
+
+    console.log('resposta do banco ', response)
+
+    return response[0];
+}
+
 
   
   module.exports = {
