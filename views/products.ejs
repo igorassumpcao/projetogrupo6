@@ -6,19 +6,17 @@
     <title>PetShop</title>
     <link rel="stylesheet" href="../stylesheets/products.css" />
   </head>
+  <%- include('./partials/header')%>
   <body>
-    <%- include('./partials/header')%>
-    <br />
-    <br />
     <h1 id="h1-produto">Produtos</h1>
     <main>
       <div class="tela-cadastro">
-        <div class="products-list" class="cards">
+        <div class="products-list">
           <% products.forEach(function(product){ %>
           <div class="card">
             <strong id="produto-nome"><%- product.name %></strong>
-            <p>Preço: R$ <%- product.price %> <br>
-              Tipo: <%- product.type %></p>
+            <p>Preço: R$ <%- product.price %> <br />
+              Tipo: <%- product.type %><br />
               <%- product.description %>
               <br />
             </p>
@@ -33,13 +31,16 @@
                   Editar
                 </a>
               </div>
-              <form
-              action="/products/<%= product.id %>?_method=DELETE"
-              method="POST"
-              >
-              <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
-              <input id="btn-excluir-cadastro" type="submit" value="Excluir" />
-              </form>
+              <div>
+                <form
+                  action="/products/<%= product.id %>?_method=DELETE"
+                  method="POST"
+                >
+                <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
+                  <input id="btn-excluir-cadastro" type="submit" value="Excluir" class="btn btn-danger"/>
+                </form>
+              </div>
+              
             </div>
             
           </div>
@@ -58,7 +59,7 @@
               />
             </div>
             <div>
-              <label for="price">Preço do produto: </label>
+              <label class="price" for="price">Preço do produto: </label>
               <input
                 name="price"
                 id="price"
@@ -68,7 +69,7 @@
               />
             </div>
             <div>
-              <label for="description">Descrição: </label>
+              <label class="description" for="description">Descrição: </label>
               <input
                 name="description"
                 id="description"
@@ -79,12 +80,13 @@
             </div>
             <div>
               <div>
-                <label>Tipo de produto:</label>
+                <label class="titulo-cadastro">Tipo de produto:</label>
               </div>
 
               <% types.forEach(function(type) {%>
                 <div class="type-radio">
                   <input
+                    class="type"
                     type="radio"
                     name="type"
                     id="<%= type.id %>"

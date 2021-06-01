@@ -34,6 +34,10 @@ const productsController = {
       id: "higiene",
       label: "Higiene",
     },
+    {
+      id: "outro",
+      label: "Outro"
+    }
   ],
 
 
