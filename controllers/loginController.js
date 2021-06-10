@@ -1,5 +1,5 @@
-const { authenticateUser } = require("../models/auth");
 const model = require("../models/auth");
+const bcrypt = require("bcrypt");
 
 const loginController = {
   get: (req, res) => {
@@ -8,21 +8,28 @@ const loginController = {
   },
 
   post: async (req, res) =>{
-    const user = await model.authenticateUser(req.body)
-    console.log('user encontrado ', user);
+    const {email, password} = req.body
+    const user = await model.authenticateUser(email)
 
-    if(user !== undefined && user.password === req.body.password){
-      req.session.user = user;
-      res.redirect("products");
-    } else{
-      
-      res.render("login", {
-        invalidCredentials: true,
-      });
-    }
+    if (!user){
+      res.render('register')
+    } 
+    const comparePassword = bcrypt.compareSync(password, user.password);
     
-  }
-};
+    if (!comparePassword) {
+      res.render("login");
+    } else {
+      //INSERIR informações de session
+        req.session.user = {
+        userid: user.id,
+        email: user.email,
+    }
+
+    res.redirect("products");
+  
+}
+}
+}
 
   /*
   post: (req, res) => {

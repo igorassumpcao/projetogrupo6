@@ -29,11 +29,11 @@ const users = [
     return user;
   }*/
 
-async function authenticateUser(credentials){
+async function authenticateUser(email){
     const response = await db.query("SELECT * FROM login where email = :email", {
         type: Sequelize.QueryTypes.SELECT, 
         replacements:{
-            email: credentials.email
+            email
         }
     })
 
