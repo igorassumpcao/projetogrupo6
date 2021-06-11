@@ -4,7 +4,7 @@ const registerModel = require("../models/register")
 const bcrypt = require("bcrypt");
 
 function get(req, res){
-    res.render ("register")
+    res.render ("register", {userexist: false})
 };
 
 async function post(req, res){
@@ -13,13 +13,13 @@ async function post(req, res){
     console.log('retorno do user', user)
 
     if (user){
-        res.render('register')
-    }else if(!user){
+        res.render('register', {userexist: true})
+    }else{
         const encryptPassword = bcrypt.hashSync(password, 12);
 
         registerModel.insertLogin({email, password: encryptPassword});
         
-        res.render('login');
+        res.render('login', {usercreate: true});
     }
 
     

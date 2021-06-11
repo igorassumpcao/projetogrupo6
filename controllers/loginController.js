@@ -3,8 +3,8 @@ const bcrypt = require("bcrypt");
 
 const loginController = {
   get: (req, res) => {
-    const message = req.query.errorMessage;
-    res.render("login", { message: message });
+    
+    res.render("login", {usercreate: false });
   },
 
   post: async (req, res) =>{
