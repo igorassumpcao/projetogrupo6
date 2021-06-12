@@ -1,0 +1,50 @@
+body {
+  width: auto;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.tela-cadastro {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.codigoInput {
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.codigoInputEspaco1{
+  margin-left: 5px;
+}
+
+.codigoInputEspaco2{
+  margin-left: 13px;
+}
+
+.codigoInputEspaco3{
+  margin-left: 17px;
+}
+
+.codigoInputEspaco4{
+  margin-left: 74px;
+}
+
+
+
+.codigoTipo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

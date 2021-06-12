@@ -2,15 +2,17 @@
 <html>
   <head>
     <title>Pacientes</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/editProducts.css">
   </head>
   <body>
     <%- include('../partials/header') %>
-
+    <br>
+    <br>
     <main class="container">
         <div class="tela-cadastro">
             <div class="cadastro">
               <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+                <div class="codigoInput">
                 <div>
                   <label for="id">Código do produto:</label>
                   <input
@@ -19,8 +21,10 @@
                     type="text"
                     value="<%- product.id%>"
                     required
+                    class="codigoInputEspaco1 codigoInput"
                   />
                 </div>
+                
                 <div>
                   <label for="name">Nome do produto:</label>
                   <input
@@ -29,6 +33,7 @@
                     type="text"
                     value="<%- product.name %>"
                     required
+                    class="codigoInputEspaco2 codigoInput"
                   />
                 </div>
                 <div>
@@ -38,6 +43,7 @@
                     id="price"
                     type="number"
                     required
+                    class="codigoInputEspaco3 codigoInput"
                     value="<%- product.price %>"
                   />
                 </div>
@@ -48,9 +54,12 @@
                     id="description"
                     type="text"
                     required
+                    class="codigoInputEspaco4 codigoInput"
                     value="<%- product.description %>"
                   />
                 </div>
+              </div>
+              <div class="codigoTipo">
                 <div>
                   <div>
                     <label>Tipo de produto:</label>
@@ -89,6 +98,7 @@
                         </button>
                     </div>
                 </div>
+              </div>
               </form>
             </div>
           </div>

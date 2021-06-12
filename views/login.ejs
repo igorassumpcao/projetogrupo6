@@ -18,8 +18,8 @@
             </div>
             <div class="login-forms">
               <form action="" method="POST">
-                <% if (usercreate === true) { %>
-                  <span id="created">Usuário criado com sucesso!</span>
+                <% if (userExist === true) { %>
+                  <span id="created">Usuário ou senha inválidos</span>
                   <% } %>
                 <input
                   type="text"
@@ -28,6 +28,7 @@
                   placeholder="Login"
                   class="login"
                 />
+                
                 <input
                   type="password"
                   name="password"
