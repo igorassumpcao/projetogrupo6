@@ -101,6 +101,12 @@ header {
   max-height: 100vh;
 }
 
+.logo-image {
+  width: 70px;
+  height: 70px;
+  margin-left: 20px;
+}
+
 .busca {
   background-color: #e0eeee;
   border: solid 2px #5f9ea0;
@@ -166,6 +172,9 @@ header {
 
 #btnBemVindo {
   width: 90px;
+  background: none;
+  border: none;
+  color: white;
 }
 
 #btn-logout {

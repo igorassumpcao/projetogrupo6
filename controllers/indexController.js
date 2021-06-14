@@ -1,6 +1,5 @@
 const productsController = require("../controllers/productsController");
 
-
 const indexController = {
   get: (req, res) => {
     res.render("index", {

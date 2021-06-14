@@ -1,0 +1,8 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: auto;
+    padding-top: 10rem;
+  }
+  
