@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, inicial-scale=1" />
     <title><%- productsType %></title>
     <link rel="stylesheet" href="/stylesheets/products.css" />
   </head>
   <%- include('../partials/header') %>
   <body>
     <h1 id="h1-produto"><%- productsType %></h1>
-    <main class="container">
+    <main>
       <div class="tela-cadastro">
         <div class="products-list">
           <% products.forEach(function(product){ %>
@@ -44,56 +46,54 @@
           </div>
           <% }) %>
         </div>
-        
-      </div>
-      <div class="cadastro">
-        <form action="" method="POST">
-          <div>
-            <label for="name">Nome do produto:</label>
-            <input
-              name="name"
-              id="name"
-              type="text"
-              placeholder="Campo obrigatório"
-              required
-            />
-          </div>
-          <div>
-            <label class="price" for="price">Preço do produto: </label>
-            <input
-              name="price"
-              id="price"
-              type="number"
-              required
-              placeholder="Campo obrigatório"
-            />
-          </div>
-          <div>
-            <label class="description" for="description">Descrição: </label>
-            <input
-              name="description"
-              id="description"
-              type="text"
-              required
-              placeholder="Campo obrigatório"
-            />
-          </div>
-          <div>
+        <div class="cadastro">
+          <form action="" method="POST">
             <div>
-              <label class="titulo-cadastro">Tipo de produto:</label>
+              <label for="name">Nome do produto:</label>
+              <input
+                name="name"
+                id="name"
+                type="text"
+                placeholder="Campo obrigatório"
+                required
+              />
             </div>
-
-            <% types.forEach(function(type) {%>
-              <div class="type-radio">
-                <input
-                  class="type"
-                  type="radio"
-                  name="type"
-                  id="<%= type.id %>"
-                  value="<%= type.id %>"
-                />
-                <label for="<%= type.id %>"> <%= type.label %> </label>
+            <div>
+              <label class="price" for="price">Preço do produto: </label>
+              <input
+                name="price"
+                id="price"
+                type="number"
+                required
+                placeholder="Campo obrigatório"
+              />
+            </div>
+            <div>
+              <label class="description" for="description">Descrição: </label>
+              <input
+                name="description"
+                id="description"
+                type="text"
+                required
+                placeholder="Campo obrigatório"
+              />
+            </div>
+            <div>
+              <div>
+                <label class="titulo-cadastro">Tipo de produto:</label>
               </div>
+
+              <% types.forEach(function(type) {%>
+                <div class="type-radio">
+                  <input
+                    class="type"
+                    type="radio"
+                    name="type"
+                    id="<%= type.id %>"
+                    value="<%= type.id %>"
+                  />
+                  <label for="<%= type.id %>"> <%= type.label %> </label>
+                </div>
               <%}) %>
             </div>
           <div>
