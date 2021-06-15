@@ -6,7 +6,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/", function (req, res) {
-  res.send("Email enviando");
+  res.send("Email enviado");
 });
 
 module.exports = router;

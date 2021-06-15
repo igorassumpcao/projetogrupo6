@@ -18,46 +18,57 @@
     <title>Registro</title>
   </head>
   <body>
-    <div class="content">
-      <h1>Tela de Registro</h1>
+    <main>
+      <div class="cadastro-container">
+        <div class="box-centro-branco">
+          <div class="box-cadastro">
+            <div class="alinha-logo">
+              <img
+                class="img-logo"
+                src="https://image.freepik.com/vetores-gratis/logotipo-de-petshop-para-gatos-e-caes_9645-750.jpg"
+                class="imagen-login"
+              />
+            </div>
+            <h3>Cadastre-se</h3>
+            <div class="cadastro-form">
+              <form action="" method="POST">
+                <% if (userexist === true) { %>
+                  <span id="created">Usuário já existe!</span>
+                <% } %>
+                <div class="mb-3">
+                  <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    placeholder="Email"
+                    required
+                  />
+                  <div id="emailHelp" class="form-text">
+                    Nunca compartilharemos seu e-mail com mais ninguém.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Senha"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn">Registrar</button>
 
-      <form action="" method="POST">
-        <% if (userexist === true) { %>
-        <span id="created">Usuário já existe!</span>
-        <% } %>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            name="email"
-            type="email"
-            class="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-            required
-          />
-          <div id="emailHelp" class="form-text">
-            Nunca compartilharemos seu e-mail com mais ninguém.
+              </form>
+              <a class="back" href="/">Voltar</a>
+
+            </div>
           </div>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Senha</label>
-          <input
-            name="password"
-            type="password"
-            class="form-control"
-            id="password"
-            required
-          />
-        </div>
-        <!-- <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
-          >
-        </div> -->
-        <button type="submit" class="btn btn-primary">Registrar</button>
-      </form>
-    </div>
+        </div>    
+      </div>
+    </main>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
