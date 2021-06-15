@@ -53,6 +53,16 @@ const productsController = {
     const types = productsController.types;
     res.render("products", { products: productsData, types: types });
   },
+  
+  getByTypes: async (req, res) => {
+    const productType = req.params.id;
+    console.log(productType)
+    const products = await productsModel.getProductByType(productType);
+    const types = productsController.types;
+    console.log(products)
+
+    res.render("products/types", { products: products, types: types, productsType: productType });
+  },
 
   edit: async (req, res) => {
     const productId = req.params.id;

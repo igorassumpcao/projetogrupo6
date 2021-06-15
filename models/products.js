@@ -18,6 +18,17 @@ async function getProductById(productId) {
     return result[0];
 }
 
+async function getProductByType(product) {
+  const result = await db.query("select * from products where type = :type", {
+    type: Sequelize.QueryTypes.SELECT,
+    replacements: {
+      type: product
+    }
+  });
+
+  return result;
+}
+
 async function insertProduct(product) {
     await db.query("insert into products (name, price, description, type) values (:name, :price, :description, :type)", {
       replacements: {
@@ -55,8 +66,8 @@ async function insertProduct(product) {
   module.exports = {
     getProducts: getProducts,
     getProductById: getProductById,
+    getProductByType: getProductByType,
     insertProduct: insertProduct,
     updateProduct: updateProduct,
     removeProduct: removeProduct
-    
   };
