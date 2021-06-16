@@ -81,3 +81,10 @@
 .lembrar-senha:hover {
   text-decoration: underline;
 }
+
+#created {
+  display: flex;
+  flex-direction: column-reverse;
+  color: red;
+  padding-left: 6px;
+}

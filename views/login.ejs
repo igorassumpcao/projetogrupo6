@@ -18,15 +18,19 @@
             </div>
             <div class="login-forms">
               <form action="" method="POST">
-                <% if (usercreate === true) { %>
-                  <span id="created">Usuário criado com sucesso!</span>
+                <% if (userinexist === true) { %>
+                  <span id="created">Usuário não cadastrado!</span>
                   <% } %>
+                  <% if (usercreate === true) { %>
+                    <span id="created">Usuário Cadastrado!</span>
+                    <% } %>
                 <input
                   type="text"
                   name="email"
                   id="login"
                   placeholder="Login"
                   class="login"
+                  required
                 />
                 <input
                   type="password"
@@ -34,6 +38,7 @@
                   id="password"
                   placeholder="Senha"
                   class="password"
+                  required
                 />
                 <input type="submit" name="botao" value="Enviar" class="btn" />
               </form>

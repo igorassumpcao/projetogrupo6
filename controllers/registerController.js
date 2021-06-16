@@ -19,7 +19,7 @@ async function post(req, res){
 
         registerModel.insertLogin({email, password: encryptPassword});
         
-        res.render('login', {usercreate: true});
+        res.redirect('login?usercreate=true');
     }
 
     

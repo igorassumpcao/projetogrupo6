@@ -3,8 +3,12 @@ const bcrypt = require("bcrypt");
 
 const loginController = {
   get: (req, res) => {
-    
-    res.render("login", {usercreate: false });
+    console.log(req.query)
+    let usercreate = false
+    if(req.query.usercreate){
+      usercreate=true
+    }
+    res.render("login", {userinexist: false, usercreate: usercreate});
   },
 
   post: async (req, res) =>{
@@ -12,7 +16,7 @@ const loginController = {
     const user = await model.authenticateUser(email)
 
     if (!user){
-      res.render('register')
+      res.render('login', {userinexist: true, usercreate: false})
     } 
     const comparePassword = bcrypt.compareSync(password, user.password);
     
