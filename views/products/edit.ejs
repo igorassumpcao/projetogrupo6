@@ -4,15 +4,17 @@
     <title>Edição de produto</title>
     <link rel="stylesheet" href="/stylesheets/editProducts.css" />
   </head>
-  <body>
-    <%- include('../partials/header') %>
+  <%- include('../partials/header') %>
 
-    <main class="container">
+  <body> 
+    <main>
+      <div class="container-edit">
+        <h1 id="h1-produto">Edição de produto</h1>
         <div class="tela-cadastro">
             <div class="cadastro">
               <form action="/products/<%= product.id %>?_method=PUT" method="POST">
                 <div>
-                  <label for="id">Código do produto:</label>
+                  <label class="id" for="id">Código do produto:</label>
                   <input
                     name="id"
                     id="id"
@@ -22,7 +24,7 @@
                   />
                 </div>
                 <div>
-                  <label for="name">Nome do produto:</label>
+                  <label class="name" for="name">Nome do produto:</label>
                   <input
                     name="name"
                     id="name"
@@ -32,7 +34,7 @@
                   />
                 </div>
                 <div>
-                  <label for="price">Preço do produto: </label>
+                  <label class="price" for="price">Preço do produto: </label>
                   <input
                     name="price"
                     id="price"
@@ -42,7 +44,7 @@
                   />
                 </div>
                 <div>
-                  <label for="description">Descrição: </label>
+                  <label class="description" for="description">Descrição: </label>
                   <input
                     name="description"
                     id="description"
@@ -92,7 +94,10 @@
               </form>
             </div>
           </div>
+      </div>
+      
     </main>
+    <%- include('../partials/footer')%>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
