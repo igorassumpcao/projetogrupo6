@@ -25,24 +25,28 @@ const productsController = {
     {
       id: "alimentação",
       label: "Alimentação",
+      description: "Os alimentos com as melhores condições nutricionais para seu(s) pet(s). Saiba o que temos para lhe oferecer.",
       image:
         "https://assetcdn.buhlergroup.com/rendition/874601345621/ab5fbfba5dc54202983d10bfb6473098/-TwebHeader_16x9",
     },
     {
       id: "brinquedos",
       label: "Brinquedos",
+      description: "Variados tipos de brinquedos para o seu pet divertir-se.",
       image:
         "https://a-static.mlcdn.com.br/1500x1500/mordedor-brinquedos-para-cachorro-kit-vinil-pet-caes-pet-toys/yellowimport/1019p/f8d8811758ff7856667f4f0fa8d15d52.jpg",
     },
     {
       id: "higiene",
       label: "Higiene",
+      description: "Fazer a higiene do animal é mais que a hora do banho, aqui você encontra uma linha completa de produtos.",
       image:
         "http://blog.boticapets.com.br/wp-content/uploads/2018/03/dog-taking-a-bath-PLAUJAC-1170x600.jpg",
     },
     {
       id: "outro",
       label: "Outro",
+      description: "Cama, coleiras e diversos acessórios para facilitar a sua vida e do seu pet, você encontra aqui.",
       image:
         "https://static.riachuelo.com.br/RCHLO/13900366001/portrait/07b4fc3983f953c4774c0258eaad3c259a6c65e8.jpg?imwidth=700",
     },
