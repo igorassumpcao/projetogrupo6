@@ -27,7 +27,7 @@ const productsController = {
       label: "Alimentação",
       description: "Os alimentos com as melhores condições nutricionais para seu(s) pet(s). Saiba o que temos para lhe oferecer.",
       image:
-        "https://assetcdn.buhlergroup.com/rendition/874601345621/ab5fbfba5dc54202983d10bfb6473098/-TwebHeader_16x9",
+        "https://www.dogvibe.com.br/wp-content/wpmowebp/wp-content/uploads/2018/05/pet_food.webp",
     },
     {
       id: "brinquedos",
@@ -41,7 +41,7 @@ const productsController = {
       label: "Higiene",
       description: "Fazer a higiene do animal é mais que a hora do banho, aqui você encontra uma linha completa de produtos.",
       image:
-        "http://blog.boticapets.com.br/wp-content/uploads/2018/03/dog-taking-a-bath-PLAUJAC-1170x600.jpg",
+        "https://i0.statig.com.br/bancodeimagens/en/ye/gv/enyegv55iiuhfna21rvpshydi.jpg",
     },
     {
       id: "outro",

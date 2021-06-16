@@ -46,12 +46,16 @@ body {
   }
   
   .cards2 {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 30%;
     height: auto;
     margin-top: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
+
   }
   .card2 {
     display: flex;
