@@ -37,7 +37,7 @@ app.use(methodOverride("_method"));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/login", loginRouter);
-app.use("/index", logoutRouter);
+app.use("/logout", logoutRouter);
 app.use("/resetpassword", resetpasswordRouter);
 app.use("/products", productsRouter);
 app.use("/register", registerRouter);

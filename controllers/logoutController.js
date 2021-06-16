@@ -1,7 +1,7 @@
 const logoutController = {
   logout: (req, res) => {
     req.session.destroy();
-    res.redirect("index");
+    res.render("logout");
   },
 };
 

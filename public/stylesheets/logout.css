@@ -1,0 +1,17 @@
+.bye-message {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 150px;
+    flex-wrap: wrap;
+    
+}
+
+h1 {
+    color:orangered;
+}
+
+
+.imgBye {
+    margin: 50px;
+}
