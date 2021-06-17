@@ -8,13 +8,13 @@
   </head>
   <%- include('./partials/header')%>
   <body>
-    <h1 id="h1-produto">Produtos</h1>
+    <h1 id="h1-produto">PRODUTOS</h1>
     <main>
       <div class="tela-cadastro">
         <div class="products-list">
           <% products.forEach(function(product){ %>
           <div class="card">
-            <strong id="produto-nome"><%- product.name %></strong>
+            <strong id="produto-nome"><%- product.name  %></strong>
             <p>Preço: R$ <%- product.price %> <br />
               Tipo: <%- product.type %><br />
               <%- product.description %>

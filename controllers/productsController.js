@@ -44,8 +44,8 @@ const productsController = {
         "https://i0.statig.com.br/bancodeimagens/en/ye/gv/enyegv55iiuhfna21rvpshydi.jpg",
     },
     {
-      id: "outro",
-      label: "Outro",
+      id: "outros",
+      label: "Outros",
       description: "Cama, coleiras e diversos acessórios para facilitar a sua vida e do seu pet, você encontra aqui.",
       image:
         "https://static.riachuelo.com.br/RCHLO/13900366001/portrait/07b4fc3983f953c4774c0258eaad3c259a6c65e8.jpg?imwidth=700",
