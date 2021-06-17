@@ -8,7 +8,7 @@ const loginController = {
     if(req.query.usercreate){
       usercreate=true
     }
-    res.render("login", {userinexist: false, usercreate: usercreate});
+    res.render("login", {userinexist: false, usercreate: usercreate, errorPassword: false});
   },
 
   post: async (req, res) =>{
@@ -16,12 +16,12 @@ const loginController = {
     const user = await model.authenticateUser(email)
 
     if (!user){
-      res.render('login', {userinexist: true, usercreate: false})
+      res.render('login', {userinexist: true, usercreate: false, errorPassword: false})
     } 
     const comparePassword = bcrypt.compareSync(password, user.password);
     
     if (!comparePassword) {
-      res.render("login");
+      res.render("login", {userinexist: false, usercreate: false, errorPassword: true});
     } else {
       //INSERIR informações de session
         req.session.user = {

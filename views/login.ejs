@@ -24,6 +24,9 @@
                   <% if (usercreate === true) { %>
                     <span id="created">Usuário Cadastrado!</span>
                     <% } %>
+                    <% if (errorPassword === true) { %>
+                      <span id="created">Senha inválida!</span>
+                      <% } %>
                 <input
                   type="text"
                   name="email"
